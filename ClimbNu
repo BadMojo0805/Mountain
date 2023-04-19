@@ -77,19 +77,21 @@ class RockClimb
          }
          else 
          { // slip down
-            int steps = rand.nextInt(5) + 1; // generate random steps between 1 and 5
-            if (distance < steps) 
+            if (distance != 0)
             {
-               steps = distance;
-            }
-            distance -= steps;
-            slips++;
-            System.out.println("Sorry you slipped down " + steps + " step(s).");
+               int steps = rand.nextInt(5) + 1; // generate random steps between 1 and 5
+               if (distance < steps)
+               {
+                  steps = distance;
+               }
+               distance -= steps;
+               System.out.println("Sorry you slipped down " + steps + " step(s).");
+            }        
+         
          }
       }
-          while (distance < h);
-      return slips;      
-                  
+       while (distance < h);
+      return slips;
        
    }
    /*Displays the information about the program such as the number of steps moving up, number of the steps 
